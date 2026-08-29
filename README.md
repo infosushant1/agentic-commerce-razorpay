@@ -3,7 +3,7 @@
 A judge-ready Razorpay Buildathon Track 01 project.
 
 ## 🌐 Live Demo
-### 👉 [Open LedgerIQ Live Demo](https://agentic-commerce-track01.onrender.com)
+### 👉 [Open Agentic Commerce — Razorpay AI Growth Agent Live Demo](https://agentic-commerce-track01.onrender.com)
 
 ## What it demonstrates
 
