@@ -1,26 +1,109 @@
-# Agentic Commerce — Razorpay AI Growth Agent
+# 🤖 Agentic Commerce — Razorpay AI Growth Agent
 
-A judge-ready Razorpay Buildathon Track 01 project.
+> **Razorpay Buildathon · Track 01 — AI Growth & Agentic Commerce**
+
+**Make merchants discoverable, recommendable, and transactable by AI.**
+
+Agentic Commerce is a full-stack AI commerce prototype that connects **AI-driven product discovery, bounded upselling, merchant growth campaigns, and a safety-first Razorpay Test Mode checkout** into one end-to-end flow.
+
+The system is designed around a simple principle:
+
+> **An AI agent may recommend and prepare a transaction — but it must not silently move money.**
+
+---
 
 ## 🌐 Live Demo
-### 👉 [Open Agentic Commerce — Razorpay AI Growth Agent Live Demo](https://agentic-commerce-track01.onrender.com)
 
-## 📄 Project Presentation
+### 👉 [Open Agentic Commerce — Live Demo](https://agentic-commerce-track01.onrender.com)
 
-[📥 View Project Presentation](./docs/track1.pdf)
+Experience the complete flow:
 
-## What it demonstrates
+**Discover → Recommend → Upsell → Confirm → Checkout → Audit**
 
-1. **Agent-readable catalog** — 18 structured products across laptops, monitors, accessories, audio, tablets and networking, with inventory, pricing and related-product graph.
-2. **Conversational commerce agent** — understands shopping intent and recommends products.
-3. **Upsell / cross-sell** — recommends bounded add-ons with an explicit reason.
-4. **Gated money action** — the agent never silently creates a payment. It prepares a checkout and requires confirmation.
-5. **Razorpay Test Mode** — creates a real Razorpay Test Mode Payment Link when API credentials are configured.
-6. **Campaign orchestrator** — generates a bounded campaign plan from catalog/inventory signals.
-7. **Audit trail** — every recommendation and money action is recorded.
-8. **Graceful failure** — Razorpay API errors fall back to a safe demo checkout state; the agent does not pretend payment succeeded.
-9. **Agent-readable merchant feed** — `/api/agent/catalog` exposes machine-readable commerce data.
+> **Environment:** Razorpay Test Mode  
+> No real money is charged.
 
+---
+
+## 🎥 Project Presentation
+
+### 📄 Pitch Deck
+
+[View the Project Presentation](./docs/track1.pdf)
+
+
+
+---
+
+# 🎯 The Problem
+
+AI is becoming a new interface for commerce, but traditional merchant stores are primarily designed for human shoppers.
+
+An AI buyer needs more than a product search box.
+
+It needs to be able to:
+
+- Understand natural-language shopping intent
+- Discover machine-readable products
+- Compare relevant products
+- Recommend useful add-ons
+- Prepare a transaction
+- Respect spending boundaries
+- Require explicit user approval
+- Create a trusted payment action
+- Leave an auditable decision trail
+
+At the same time, merchants need AI to do more than answer product questions.
+
+They need it to identify **growth opportunities** such as:
+
+- Cross-sell opportunities
+- Product bundles
+- Inventory-driven campaigns
+- Bounded promotional ideas
+
+Agentic Commerce connects these two sides.
+
+---
+
+# 💡 The Solution
+
+Agentic Commerce provides an **agentic commerce layer** between the merchant catalog, the AI buyer and the payment provider.
+
+```text
+                    ┌─────────────────────┐
+                    │     AI Buyer        │
+                    │ Natural-language    │
+                    │ shopping intent     │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ Agentic Commerce    │
+                    │     Engine          │
+                    └──────────┬──────────┘
+                               │
+             ┌─────────────────┼─────────────────┐
+             │                 │                 │
+             ▼                 ▼                 ▼
+       Product Agent     Growth Engine      Safety Layer
+             │                 │                 │
+             ▼                 ▼                 ▼
+        Recommend          Campaigns       Confirmation
+        Upsell/Cross-sell  Bundles         Amount checks
+             │                 │                 │
+             └─────────────────┼─────────────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ Razorpay Test Mode  │
+                    │   Payment Link      │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                       Audit Trail
+
+```
 ## Stack
 
 - FastAPI + Pydantic
@@ -147,15 +230,7 @@ Hard bounds:
 - High-value orders require an extra confirmation state
 - Razorpay failures are surfaced, not hidden
 
-## API
 
-- `GET /api/health`
-- `GET /api/agent/catalog`
-- `POST /api/agent/chat`
-- `POST /api/checkout/prepare`
-- `POST /api/checkout/confirm`
-- `GET /api/audit`
-- `GET /api/campaigns`
 
 ## Razorpay amount handling
 
