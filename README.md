@@ -7,7 +7,7 @@ A judge-ready Razorpay Buildathon Track 01 project.
 
 ## 📄 Project Presentation
 
-[📥 View Project Presentation](./docs/track01.pdf)
+[📥 View Project Presentation](./docs/track1.pdf)
 
 ## What it demonstrates
 
