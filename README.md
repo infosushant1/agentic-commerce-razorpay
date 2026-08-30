@@ -5,6 +5,10 @@ A judge-ready Razorpay Buildathon Track 01 project.
 ## 🌐 Live Demo
 ### 👉 [Open Agentic Commerce — Razorpay AI Growth Agent Live Demo](https://agentic-commerce-track01.onrender.com)
 
+## 📄 Project Presentation
+
+[📥 View Project Presentation](./docs/track01.pdf)
+
 ## What it demonstrates
 
 1. **Agent-readable catalog** — 18 structured products across laptops, monitors, accessories, audio, tablets and networking, with inventory, pricing and related-product graph.
